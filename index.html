@@ -2,229 +2,230 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ո՞վ է ուզում դառնալ Միլիոնատեր </title>
-    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2 format('woff2')" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ո՞վ է ուզում դառնալ Միլիոնատեր </title>
+  <link rel="stylesheet" href="css/animate.css">
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2 format('woff2')"
+    rel="stylesheet">
 
 </head>
 
 <body>
 
-    <section class="game">
-        <div class="container">
-            <button class="start-btn">Սկսել խաղը</button>
-            <div class="rules-popup" id="rulesPopup">
-                <div class="rules-content">
-                    "Ո՞վ է ուզում դառնալ Միլիոնատեր" <br><br>
-                    ✔️ Խաղը բաղկացած է 15 հարցից։<br>
-                    ✔️ Յուրաքանչյուր ճիշտ պատասխանի դեպքում խաղացողն անցնում է հաջորդ հարցին։<br>
-                    ✔️ Խաղում կա 2 անձեռնմխելի գումար 5-րդ և 10-րդ հարցերից հետո։<br>
-                    ✔️ Խաղացողը կարող է օգտվել՝ <em>«50/50»</em>, <em>«Դահլիճի օգնություն»</em>, <em>«Զանգ
-                        ընկերոջը»</em>, <em>«Հարցը փոխելու»</em> և <em>«ԱԲբվ-ի օգնություն»</em> հնարավություններից։<br>
-                    ✔️ Սխալ պատասխանի դեպքում խաղացողը ստանում է վերջին շահած անձեռնմխելի գումարը։<br>
-                    ✔️ Խաղացողը կարող է ցանկացած պահի դադարեցնել խաղը և վերցնել շահած գումարը։<br><br>
-                    ՀԱՋՈՂՈՒԹՅՈՒՆ ՔԵԶ՝ ԱՊԱԳԱ ՄԻԼԻՈՆԱՏԵՐ։ 💰
+  <section class="game">
+    <div class="container">
+      <button class="start-btn">Սկսել խաղը</button>
+      <div class="rules-popup" id="rulesPopup">
+        <div class="rules-content">
+          "Ո՞վ է ուզում դառնալ Միլիոնատեր" <br><br>
+          ✔️ Խաղը բաղկացած է 15 հարցից։<br>
+          ✔️ Յուրաքանչյուր ճիշտ պատասխանի դեպքում խաղացողն անցնում է հաջորդ հարցին։<br>
+          ✔️ Խաղում կա 2 անձեռնմխելի գումար 5-րդ և 10-րդ հարցերից հետո։<br>
+          ✔️ Խաղացողը կարող է օգտվել՝ <em>«50/50»</em>, <em>«Դահլիճի օգնություն»</em>, <em>«Զանգ
+            ընկերոջը»</em>, <em>«Հարցը փոխելու»</em> և <em>«ԱԲբվ-ի օգնություն»</em> հնարավություններից։<br>
+          ✔️ Սխալ պատասխանի դեպքում խաղացողը ստանում է վերջին շահած անձեռնմխելի գումարը։<br>
+          ✔️ Խաղացողը կարող է ցանկացած պահի դադարեցնել խաղը և վերցնել շահած գումարը։<br><br>
+          ՀԱՋՈՂՈՒԹՅՈՒՆ ՔԵԶ՝ ԱՊԱԳԱ ՄԻԼԻՈՆԱՏԵՐ։ 💰
 
-                </div>
+        </div>
+      </div>
+      <button class="information" id="showRules">Կանոններ</button>
+      <div class="game-block">
+        <h1 class="game-title">Ո՞վ է ուզում դառնալ Միլիոնատեր</h1>
+        <div class="game-wrap">
+          <div class="block-questions">
+            <div class="question question1 question-active">
+              <h2>Նվագախմբի Տարատեսակ</h2>
+              <div class="block-answers">
+                <div class="answer">Ա. Դողային</div>
+                <div class="answer">Բ. Կողային</div>
+                <div class="answer">Գ. Փողային</div>
+                <div class="answer">Դ. Փողասերային</div>
+              </div>
             </div>
-            <button class="information" id="showRules">Կանոններ</button>
-            <div class="game-block">
-                    <h1 class="game-title">Ո՞վ է ուզում դառնալ Միլիոնատեր</h1>
-                    <div class="game-wrap">
-                                <div class="block-questions">
-                                         <div class="question question1 question-active">
-                                                    <h2>Նվագախմբի  Տարատեսակ</h2>
-                                                    <div class="block-answers">
-                                                             <div class="answer">Ա. Դողային</div>
-                                                             <div class="answer">Բ.  Կողային</div>
-                                                             <div class="answer">Գ.  Փողային</div>
-                                                             <div class="answer">Դ.  Փողասերային</div>
-                                                    </div>
-                                         </div>
-                                     <div class="question question_2">
-                <h2>
-                  Թռչունների մեջ այդպիսիք չեն հանդիպում:
-                </h2>
-                <div class="block-answers">
-                  <div class="answer">Ա․ Մոխրագույն</div>
-                  <div class="answer">Բ․ Դեղնամեջք</div>
-                  <div class="answer">Գ․ Վարդակուրծք</div>
-                  <div class="answer">Դ․ Լաջվարդակուրծք</div>
-                </div>
+            <div class="question question_2">
+              <h2>
+                Թռչունների մեջ այդպիսիք չեն հանդիպում:
+              </h2>
+              <div class="block-answers">
+                <div class="answer">Ա․ Մոխրագույն</div>
+                <div class="answer">Բ․ Դեղնամեջք</div>
+                <div class="answer">Գ․ Վարդակուրծք</div>
+                <div class="answer">Դ․ Լաջվարդակուրծք</div>
               </div>
-  
-              <div class="question question_3">
-                <h2>
-                  Հոմերոսը հեղինակն է այդ պոեմի:
-                
-                </h2>
-                <div class="block-answers">
-                  <div class="answer">Ա․ Դանթեական</div>
-                  <div class="answer">Բ․ Իլիական</div>
-                  <div class="answer">Գ․ Լիրիկական</div>
-                  <div class="answer">Դ․ Ցինիկական</div>
-                </div>
+            </div>
+
+            <div class="question question_3">
+              <h2>
+                Հոմերոսը հեղինակն է այդ պոեմի:
+
+              </h2>
+              <div class="block-answers">
+                <div class="answer">Ա․ Դանթեական</div>
+                <div class="answer">Բ․ Իլիական</div>
+                <div class="answer">Գ․ Լիրիկական</div>
+                <div class="answer">Դ․ Ցինիկական</div>
               </div>
-  
-              <div class="question question_4">
-                <h2>
-                  Ո՞ր բառը չի հանդիպում հայերենում:
-            
-                </h2>
-                <div class="block-answers">
-                  <div class="answer">Ա․ Կիսալուսին</div>
-                  <div class="answer">Բ․ Կիսանդրի</div>
-                  <div class="answer">Գ․ Կիսակղզի</div>
-                  <div class="answer">Դ․ Թերակղզի</div>
-                </div>
+            </div>
+
+            <div class="question question_4">
+              <h2>
+                Ո՞ր բառը չի հանդիպում հայերենում:
+
+              </h2>
+              <div class="block-answers">
+                <div class="answer">Ա․ Կիսալուսին</div>
+                <div class="answer">Բ․ Կիսանդրի</div>
+                <div class="answer">Գ․ Կիսակղզի</div>
+                <div class="answer">Դ․ Թերակղզի</div>
               </div>
-  
-              <div class="question question_5">
-                <h2>
-                  Qui gladio,gladio petit: Ըստ լատինական  
-                  <br>ասույթի` ի՞նչը բարձրացնողը դրանից էլ կընկնի:
-                </h2>
-                <div class="block-answers">
-                  <div class="answer">Ա․ Սուրը</div>
-                  <div class="answer">Բ․ Հուրը</div>
-                  <div class="answer">Գ․ Ծանրաձողը</div>
-                  <div class="answer">Դ․ Վճարման հարկը</div>
-                </div>
+            </div>
+
+            <div class="question question_5">
+              <h2>
+                Qui gladio,gladio petit: Ըստ լատինական
+                <br>ասույթի` ի՞նչը բարձրացնողը դրանից էլ կընկնի:
+              </h2>
+              <div class="block-answers">
+                <div class="answer">Ա․ Սուրը</div>
+                <div class="answer">Բ․ Հուրը</div>
+                <div class="answer">Գ․ Ծանրաձողը</div>
+                <div class="answer">Դ․ Վճարման հարկը</div>
               </div>
-  
-              <div class="question question_6">
-                <h2>
-                 Խնդիր-փոխուկ. վրա + 3/4 մարդ = ...
-                          
-                </h2>
-                <div class="block-answers">
-                  <div class="answer">Ա․ Նախամարդ</div>
-                  <div class="answer">Բ․ Անմարդ</div>
-                  <div class="answer">Գ․ Մակարդ</div>
-                  <div class="answer">Դ․ Թակարդ</div>
-                </div>
+            </div>
+
+            <div class="question question_6">
+              <h2>
+                Խնդիր-փոխուկ. վրա + 3/4 մարդ = ...
+
+              </h2>
+              <div class="block-answers">
+                <div class="answer">Ա․ Նախամարդ</div>
+                <div class="answer">Բ․ Անմարդ</div>
+                <div class="answer">Գ․ Մակարդ</div>
+                <div class="answer">Դ․ Թակարդ</div>
               </div>
-  
-              <div class="question question_7">
-                <h2>
-                  1868 թ. Արեգակի սպեկտրում հայտնաբերվեց վառ դեղին գիծ, որը չէր  
-                  վերագրվում այդ ժամանակ հայտնի որևէ տարրի: Տարրը կոչվեց ...: 
-                </h2>
-                <div class="block-answers">
-                  <div class="answer">Ա․ Թալիում</div>
-                  <div class="answer">Բ․ Թուլիում</div>
-                  <div class="answer">Գ․ Հելիում</div>
-                  <div class="answer">Դ․ Սելենիում</div>
-                </div>
+            </div>
+
+            <div class="question question_7">
+              <h2>
+                1868 թ. Արեգակի սպեկտրում հայտնաբերվեց վառ դեղին գիծ, որը չէր
+                վերագրվում այդ ժամանակ հայտնի որևէ տարրի: Տարրը կոչվեց ...:
+              </h2>
+              <div class="block-answers">
+                <div class="answer">Ա․ Թալիում</div>
+                <div class="answer">Բ․ Թուլիում</div>
+                <div class="answer">Գ․ Հելիում</div>
+                <div class="answer">Դ․ Սելենիում</div>
               </div>
-  
-              <div class="question question_8">
-                <h2>
-                  Առաջին վերջրյա նավը, որը հասել է Հյուսիսային բևեռ:
-                </h2>
-                <div class="block-answers">
-                  <div class="answer">Ա․ «Երմակ»</div>
-                  <div class="answer">Բ․ «Լենին»</div>
-                  <div class="answer">Գ․ «Արկտիկա»</div>
-                  <div class="answer">Դ․ «Անտարկտիկա»</div>
-                </div>
+            </div>
+
+            <div class="question question_8">
+              <h2>
+                Առաջին վերջրյա նավը, որը հասել է Հյուսիսային բևեռ:
+              </h2>
+              <div class="block-answers">
+                <div class="answer">Ա․ «Երմակ»</div>
+                <div class="answer">Բ․ «Լենին»</div>
+                <div class="answer">Գ․ «Արկտիկա»</div>
+                <div class="answer">Դ․ «Անտարկտիկա»</div>
               </div>
-  
-              <div class="question question_9">
-                <h2>
+            </div>
+
+            <div class="question question_9">
+              <h2>
                 Գերմանացի գրող և քննադատ Լեսինգի<br>
                 կարծիքով` նմանակել նշանակում է ...
-                </h2>
-                <div class="block-answers">
-                  <div class="answer">Ա․ Ծաղրել</div>
-                  <div class="answer">Բ․ Նախանձել</div>
-                  <div class="answer">Գ․ Ոչինչ չանել</div>
-                  <div class="answer">Դ․ Շուլուխ անել</div>
-                </div>
+              </h2>
+              <div class="block-answers">
+                <div class="answer">Ա․ Ծաղրել</div>
+                <div class="answer">Բ․ Նախանձել</div>
+                <div class="answer">Գ․ Ոչինչ չանել</div>
+                <div class="answer">Դ․ Շուլուխ անել</div>
               </div>
-  
-              <div class="question question_10">
-                <h2>
-                  Ո՞ր քաղաքի անվանումն է առաջացել «պալատ» արմատից:
-                </h2>
-                <div class="block-answers">
-                  <div class="answer">Ա․ Լա Պլատա</div>
-                  <div class="answer">Բ․ Սպլիտ</div>
-                  <div class="answer">Գ․ Ստարա Պլանինա</div>
-                  <div class="answer">Դ․ Օսպիտալետ</div>
-                </div>
-              </div>
-  
-              <div class="question question_11">
-                <h2>
-                  Այդ մարզիկը պատմության մեջ առաջին է 100 մետր
-                  վազքում ցույց տվել 10,0 վայրկյան արդյունք:
-                </h2>
-                <div class="block-answers">
-                  <div class="answer">Ա․ Ջեսի Օուեն</div>
-                  <div class="answer">Բ․ Արմին Խարի</div>
-                  <div class="answer">Գ․ Վալերի Բորզով</div>
-                  <div class="answer">Դ․ Բեն Ջոնսոն</div>
-                </div>
-              </div>
-  
-              <div class="question question_12">
-                <h2>
-             Ո՞ր թվականին է պաշտոնապես բացվել Պանամայի ջրանցքը:
-                </h2>
-                <div class="block-answers">
-                  <div class="answer">Ա․ 1914</div>
-                  <div class="answer">Բ․ 1917</div>
-                  <div class="answer">Գ․ 1920</div>
-                  <div class="answer">Դ․ 1923</div>
-                </div>
-              </div>
-  
-              <div class="question question_13">
-                <h2>
-                 843 թ. Վերդենի պայմանագրով փաստորեն ստեղծվեց <br>
-                3 մեծ պետություն: Ո՞րը չի մտնում այդ 3-ի մեջ:
-                </h2>
-                <div class="block-answers">
-                  <div class="answer">Ա․ Ֆրանսիա</div>
-                  <div class="answer">Բ․ Գերմանիա</div>
-                  <div class="answer">Գ․ Իսպանիա</div>
-                  <div class="answer">Դ․ Իտալիա</div>
-                </div>
-              </div>
-  
-              <div class="question question_14">
-                <h2>
-                  Ո՞ր ազգության անվանումով համաստեղություն կա:
-                </h2>
-                <div class="block-answers">
-                  <div class="answer">Ա․ Հնդիկ</div>
-                  <div class="answer">Բ․ Հույն</div>
-                  <div class="answer">Գ․ Լատինացի</div>
-                  <div class="answer">Դ․ Իտալացի</div>
-                </div>
-              </div>
-  
-              <div class="question question_15">
-                <h2>
-                  Ո՞ր երկրում է գտնվում Մաչու Պիչու պատմական հուշարձանը: 
-                </h2>
-                <div class="block-answers">
-                  <div class="answer">Ա․ Չիլի</div>
-                  <div class="answer">Բ․ Պերու</div>
-                  <div class="answer">Գ․ Արգենտինա</div>
-                  <div class="answer">Դ․ Բրազիլիա</div>
-                </div>
-              </div>
+            </div>
 
-            <div class="question question_extra"id="extra"></div>
+            <div class="question question_10">
+              <h2>
+                Ո՞ր թվականին է ստորագրվել Մագնա Կարտա։
+              </h2>
+              <div class="block-answers">
+                <div class="answer">Ա․ 1066</div>
+                <div class="answer">Բ․ 1215</div>
+                <div class="answer">Գ․ 1314</div>
+                <div class="answer">Դ․ 1592</div>
+              </div>
+            </div>
+
+            <div class="question question_11">
+              <h2>
+                Ո՞րն է աշխարհի ամենախոր օվկիանոսային իջվածքը։
+              </h2>
+              <div class="block-answers">
+                <div class="answer">Ա․Տոնգայի իջվածք</div>
+                <div class="answer">Բ․Պուերտո Ռիկոյի իջվածք</div>
+                <div class="answer">Գ․Ճավայի իջվածք</div>
+                <div class="answer">Դ․Մարիանյան իջվածք</div>
+              </div>
+            </div>
+
+            <div class="question question_12">
+              <h2>
+                Ո՞ր մոլորակն ունի ամենաշատ բնական արբանյակները։
+              </h2>
+              <div class="block-answers">
+                <div class="answer">Ա․ Յուպիտեր</div>
+                <div class="answer">Բ․ Սատուրն</div>
+                <div class="answer">Գ․ Նեպտուն</div>
+                <div class="answer">Դ․ Ուրան</div>
+              </div>
+            </div>
+
+            <div class="question question_13">
+              <h2>
+                843 թ. Վերդենի պայմանագրով փաստորեն ստեղծվեց <br>
+                3 մեծ պետություն: Ո՞րը չի մտնում այդ 3-ի մեջ:
+              </h2>
+              <div class="block-answers">
+                <div class="answer">Ա․ Ֆրանսիա</div>
+                <div class="answer">Բ․ Գերմանիա</div>
+                <div class="answer">Գ․ Իսպանիա</div>
+                <div class="answer">Դ․ Իտալիա</div>
+              </div>
+            </div>
+
+            <div class="question question_14">
+              <h2>
+                Ո՞ր երկիրն ունի աշխարհի ամենաերկար ծովափը։
+              </h2>
+              <div class="block-answers">
+                <div class="answer">Ա․ Ռուսասատան</div>
+                <div class="answer">Բ․Ավստրիա</div>
+                <div class="answer">Գ․ Կանադա</div>
+                <div class="answer">Դ․ ԱՄՆ</div>
+              </div>
+            </div>
+
+            <div class="question question_15">
+              <h2>
+                Ո՞ր թվականին է ընկել Բեռլինի պատ։
+              </h2>
+              <div class="block-answers">
+                <div class="answer">Ա․ 1987</div>
+                <div class="answer">Բ․ 1988</div>
+                <div class="answer">Գ․ 1989 </div>
+                <div class="answer">Դ․ 1991 </div>
+              </div>
+            </div>
+
+            <div class="question question_extra" id="extra"></div>
 
             <div class="question question_16">
               <h2>
-              Որ երկիրն է հաղթել ֆուտբոլի աշխարի գավաթը 2022 թվականին:
+                Որ երկիրն է հաղթել ֆուտբոլի աշխարի գավաթը 2022 թվականին:
               </h2>
               <div class="block-answers">
                 <div class="answer">Ա․Պորտուգալիա</div>
@@ -235,73 +236,87 @@
             </div>
 
             <button class="end-btn" id="end">դադարեցնել խաղը</button>
- 
-                            <div class="block-win">
-                              <div class="hints"></div>
-                        <div class="hints-help fifty-fifty"></div>
-                        <span class="close.left"></span>
-                        <span class="close.right"></span>
-                        50/50
 
-                            </div>
+            <div class="block-win">
+              <div class="hints"></div>
+              <div class="hints-help fifty-fifty"></div>
+              <span class="close.left"></span>
+              <span class="close.right"></span>
+              50/50
 
-                            <div class="hints-help hall-help"></div>
-                            <span class="close.left"></span>
-                            <span class="close.right"></span>
-                            <i class="fas fa-user"></i>
-                                </div>
+            </div>
 
-                                <div class="hints-help call-friend"></div>
-                            <span class="close.left"></span>
-                            <span class="close.right"></span>
-                            <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="hints-help changet question" id="hintbox">
-                            <span class="close.left"></span>
-                            <span class="close.right"></span>
-                            <i class="fas fa-retweet"></i>
-                            </div>
+            <div class="hints-help hall-help"></div>
+            <span class="close.left"></span>
+            <span class="close.right"></span>
+            <i class="fas fa-user"></i>
+          </div>
 
-                            <div class="hints-help ai-help">
-                              <span class="close.left"></span>
-                              <span class="close.right"></span>
-                             AI
-                             </div>
+          <div class="hints-help call-friend"></div>
+          <span class="close.left"></span>
+          <span class="close.right"></span>
+          <i class="fas fa-phone"></i>
         </div>
-        </div class="wins">
-        <div class="wins-block"><spam>15</spam 5 000 000></div>
-        <div class="wins-block"><spam>14</spam 3 000 000></div>
-        <div class="wins-block"><spam>13</spam 2 000 000></div>
-        <div class="wins-block"><spam>12</spam 1 000 000></div>
-        <div class="wins-block"><spam>11</spam 500 000></div>
-        <div class="wins-block"><spam>10</spam 250 000></div>
-        <div class="wins-block"><spam>9</spam  125 000></div>
-        <div class="wins-block"><spam>8</spam  64 000></div>
-        <div class="wins-block"><spam>7</spam  32 000></div>
-        <div class="wins-block"><spam>6</spam  16 000></div>
-        <div class="wins-block"><spam>5</spam  8 000></div>
-        <div class="wins-block"><spam>4</spam  4 000></div>
-        <div class="wins-block"><spam>3</spam  2 000></div>
-        <div class="wins-block"><spam>2</spam  1 000></div>
-        <div class="wins-block"><spam>1</spam  500></div>
-           
-      </div>
-      <div class="ai explain_block" id="aiExplainBlock">
-        <span class="ai-explain-close" id="aiExplainClose">&times;</span>
-        <h3>UP պատասխան</h3>
-        <p class="ai.explain-text" id="aiExplainText"></p>
+        <div class="hints-help changet question" id="hintbox">
+          <span class="close.left"></span>
+          <span class="close.right"></span>
+          <i class="fas fa-retweet"></i>
+        </div>
 
-։
-</div>
+        <div class="hints-help ai-help">
+          <span class="close.left"></span>
+          <span class="close.right"></span>
+          AI
+        </div>
+      </div>
+    </div class="wins">
+    <div class="wins-block">
+    <spam>15</spam 5 000 000></div>
+    <div class="wins-block">
+    <spam>14</spam 3 000 000></div>
+    <div class="wins-block">
+    <spam>13</spam 2 000 000></div>
+    <div class="wins-block">
+    <spam>12</spam 1 000 000></div> 
+    <div class="wins-block">
+    <spam>11</spam 500 000>  </div>
+    <div class="wins-block">
+    <spam>10</spam 250 000>  </div>
+    <div class="wins-block">
+    <spam>9</spam 125 000>   </div>
+    <div class="wins-block">
+    <spam>8</spam 64 000>    </div>
+    <div class="wins-block">
+    <spam>7</spam 32 000>    </div>
+    <div class="wins-block">
+    <spam>6</spam 16 000>    </div>
+    <div class="wins-block">
+    <spam>5</spam 8 000>     </div>
+    <div class="wins-block">
+    <spam>4</spam 4 000>     </div>
+    <div class="wins-block">
+    <spam>3</spam 2 000>     </div>
+    <div class="wins-block">
+    <spam>2</spam 1 000>     </div>
+    <div class="wins-block">
+    <spam>1</spam 500>       </div>
+   
+
     </div>
-  </div>
-</div>
-    </section>
-    <script  src="js/script.js"></script>
+    <div class="ai explain_block" id="aiExplainBlock">
+      <span class="ai-explain-close" id="aiExplainClose">&times;</span>
+      <h3>UP պատասխան</h3>
+      <p class="ai.explain-text" id="aiExplainText"></p>
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+  </section>
+  <script src="js/script.js"></script>
 
 
 </body>
 
 </html>
-
-
