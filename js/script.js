@@ -402,3 +402,266 @@ function getStartBlockWins (){
          winBlock[i].classList.remove('wins-active','animate__animated','animate__pulse','win-guaranteed','animate__tada', 'animate__heartBeat')
       }
 }
+
+function getStartBlocksHelp(){
+  for(let i = 0 ; i < helpBtns.length; i++){
+    helpBtns[i].classList.remove('block-event','hints-help_spent')
+
+  }
+  aiExplainBlock.classList.remove('show')
+  aiExplainText.inner
+}
+
+function correctnessAnswer(numberQuestion, userAnswer, blockAnswer, blockQuestionParentElement) {
+  const correctSound = new Audio("music/correct-sound.mp3")
+  const incorrectSound = new Audio("music/incorrect-sound.mp3")
+  // Ճիշտ պատասխանի ձայն
+  function playCorrectSound() {
+    correctSound.play();
+  }
+  // Սխալ պատասխանի ձայն
+  function playIncorrectSound() {
+    incorrectSoundFlag = true
+    fixed1.pause()
+    incorrectSound.play();
+  }
+  // Եթե պատասխանը ճիշտ է, ապա բլոկը կանաչ կներկվի  
+  if (answers[numberQuestion] === userAnswer) {
+
+    setTimeout(() => {
+      blockAnswer.classList.add('green-bg');
+    }, 500);
+    // Ճիշտ պատասխան, ճիշտ ձայն
+    playCorrectSound();
+    //Ստուգում է եթե տվյալ դիվը ունի տվյալ կլասը , հեռացնում է
+    if (numberQuestion == 'question_extra') {
+      setTimeout(() => {
+        extraQuestion.classList.remove("question_extra")
+        extraQuestion.classList.remove("question-active")
+      }, 500);
+
+    }
+  } else {
+    setTimeout(() => {
+      blockAnswer.classList.add('error-answer');
+      setTimeout(() => {
+        // Կանչում ենք ֆունկցիան ճիշտ պատասխանը ստանալու համար
+        let blockAnswer = getBlockAnswer(blockQuestionParentElement.children, numberQuestion);
+        blockAnswer.classList.add('green-bg');
+      }, 1000);
+
+    }, 500);
+    // Սխալ պատասխան, սխալ ձայն
+    playIncorrectSound();
+    // Կանչում ենք ֆունկցիան  պատասխաններով բլոկը թաքցնելու և շահումները ցույց տալու համար
+    setTimeout(() => {
+      getRemoveClassName();
+    }, 3500);
+    setTimeout(() => {
+      mainGame.classList.remove('animate__backInUp');//mainGame-ի վրայից ջնջվում է նախապես ստեղծված կլասի անվանումը
+      gameWrapper.classList.remove('animate__flipInX');// gameWrapper-ի վրայից ջնջվում է նախապես ստեղծված կլասի անվանումը
+      mainGame.classList.add('animate__animated', 'animate__backOutDown');//mainGame-ի վրա ավելանում է նշված երկու կլասի անվանումները
+      setTimeout(() => {//Ցույց է տալիս թե ինչքան ժամանակ հետո պետք է կատարվի տվյալ գործողությունը
+        mainGame.style.display = 'none';
+        startBtn.style.display = 'block';
+        startBtn.classList.remove('animate__backOutUp');
+        startBtn.classList.add('animate__backInDown');
+      }, 1000);
+      setTimeout(() => {
+        startBtn.classList.remove('animate__backInDown');
+        game.style.backgroundImage = '';
+
+      }, 2000);
+
+
+      // գտնում ենք հաղթած գումարի բլոկը
+      let userWin = document.querySelector('.user-win');
+      //եթե այն գոյություն ունի ջնջում ենք
+      if (userWin) {
+        userWin.remove();
+      }
+      // Մաքրում ենք բոլոր ակտիվ կլասերը, որպեսի ունենանք խաղի ավարտի պատկեր, կամ փակենք խաղը, ու ցուցադրենք միայն սկսել խաղը կոճակը
+      getStartGame();
+    }, 4500);
+
+    return;
+  }
+  // Կանչում ենք ֆունկցիան, որը կցուցադրի նոր հարցը
+  setTimeout(() => {
+    getBlockQuestion();
+  }, 2000);
+}
+
+changeQuestion.addEventListener('click',function changeQuestion(){
+  let blockActiveQuestion = getActiveBlockQuestion = getActiveBlockQuestion()
+  extraQuestion.classList.add('questin-active')
+  changeQuestion.classList.add('hints-help_spent','block-event')
+})
+
+function getRemoveClassName(){
+  for(let i = 0 ; i < blockQuestion.length ;i++){
+    if (blockQuestion [i].classList.contains('question-active')){
+      blockQuestion[i].classList.add('animate__animated','animate__fadeOut')
+      blockQuestion[i].classList.remove('question-active')
+      getBlockBefore(blockQuestion[i])
+    }
+  }
+}
+function getBlockBefore(block){
+  block.insertAdjacentHTML('before',`<div class="user-win animate__animated animate__fadeIn"><p>Ձեր հաղթանակը</p><p>"${getGarantWin()}"</p></div>`);
+}
+function getGarantWin(){
+  for(let i = 0 ; i < winBlock.length;i++){
+    if(winBlock[i].classList,contains('win-guaranteed')){
+      let getUserWin = winBlock[i],innerText
+      for(let symbol of getUserWin){
+        if(symbol === "."){
+          getUserWin = ""
+          continue;
+        }
+        getUserWin += symbol
+
+      }
+      return getUserWin + 'Դրամ'
+
+    }
+  }
+  return 0
+}
+
+function getBlockAnswer(blockChildrnElem){
+   for(let i = 0 ; i < blockChildrnElem.length;i++){
+    if(blockChildrnElem[i].innerText ==  answers[numberQuestion]){
+             return blockChildrnElem[i];
+    }
+   }
+}
+// ֆունկցիան նախատեսված է հայտնվող հարցի բլոկը թաքցնելու և նոր հարցի բլոկը ցույց տալու համար։
+function getBlockQuestion() {
+  for (let i = 0; i <= blockQuestion.length; i++) {
+
+    if (i === blockQuestion.length - 1) {//Եթե i-ն հասել է վերջին հարցի բլոկին,
+      // ապա կանչվում է getWinBlock(i + 1) որը,ցույց կտա հաղթանակի բլոկը։
+      getWinBlock(i + 1);
+      return;
+    }
+    if (blockQuestion[i].classList.contains('question-active')) {
+      blockQuestion[i].classList.add('animate__fadeOut');//ավելանում է հետևյալ անունով կլասը
+      blockQuestion[i].classList.remove('question-active', 'animate__animated', 'animate__pulse');//հեռացվում է կլասը
+
+      setTimeout(() => {
+        blockQuestion[++i].classList.add('question-active', 'animate__animated', 'animate__pulse');
+        getWinBlock(i);
+      }, 200);
+      return;
+    }
+  }
+}
+
+function getWinBlock(num){
+  let numBlock = (winBlock.length) - num
+  count++
+
+  if (count >= 6) {
+    changeQuestion.style.opacity = "1"
+
+  }
+if (numBlock === 10 || numBlock === 5){
+  winBlock[numBlock = 1].classList.remove('wins-active')
+  winGuaranteed(numBlock)
+
+}else if (numBlock == 14){
+  winBlock[numBlock].classList.add('wins-active','animate__animated','animate__animate__pulse');
+
+}else if (numBlock === 0 ){
+  extraQuestion.style.opacity = "0"
+  endB.style.opacity = '0'
+  winBlock[numBlock+1].classList.remove('wins-active')
+  winBlock[numBlock].classList.add('animate__animated','animate__heartBeat','win-guaranted');
+  winGuaranteed(numBlock)
+  setTimeout(() => {
+    getRemoveClassName()
+  },200);
+
+
+
+}else{
+  winBlock[numBlock + 1].classList.remove('win-active')
+  winBlock[numBlock].classList.add('wins-active','animate__animated','animate__pulse')
+}
+
+function winGuaranteed(numBlock){
+  if(numBlock == 10){
+    fixed1.play()
+    winBlock[10].classList.remove('animate__animated','animate__tada','win__guaranteed')
+    winBlock[10].classList.add('animate__animated','animate__tada','win__guaranteed')
+
+  }
+
+  if(numBlock == 0){
+    generalMusic.play()
+    winBlock[5].classList.add('animate__animated','animate__tada','win-guaranteed')
+  }
+
+}
+}
+
+function getActiveBlockQuestion(){
+  for (let i = 0 ; i < blockQuestion.length;i++){
+    if (blockQuestion[i].classList.contains('question-active'))
+      return blockQuestion[i]
+  }
+}
+
+function getBlockRandom(blockChildrenAnswer, blockCorrectAnswer, numRandom) {
+  for (let i = 0; i < blockChildrenAnswer.length; i++) {
+    // Եթե պատահական բլոկը համապատասխանում է ճիշտ պատասխանին, ապա կրկնում է գործողությունը այնքան ժամանակ
+    // մինչև գտնի սխալ պատասխան
+
+    if (blockChildrenAnswer[numRandom] === blockCorrectAnswer) {
+      if (numRandom === blockChildrenAnswer.length - 1) {
+        numRandom -= 1;
+      } else if (numRandom === 0) {
+        numRandom += 1;
+      } else {
+        numRandom += 1;
+      }
+    }
+    return blockChildrenAnswer[numRandom];
+  }
+}
+
+function removeBlocks (blockChildrenAnswer){
+  for(let i = 0 ; i < blockChildrenAnswer.length;i++){
+    if (!blockChildrenAnswer[i].classList.contains('fifty-active')){
+      blockChildrenAnswer[i].classList.add('animate__animated','animate__zoomOut')
+
+    }
+  }
+
+}
+
+function getRandom(min,max){
+  return Math.floor(Math.random()*(max-min+1)+min)
+}
+
+
+const answers = {
+  question_1: 'Բ. Յուպիտեր',
+  question_2: 'Բ. Ուիլյամ Շեքսպիր',
+  question_3: 'Բ. 206',
+  question_4: 'Գ. Ազոտ',
+  question_5: 'Բ․ Էվերեստ',
+  question_6: 'Բ․ Սատուրն',
+  question_7: 'Բ․ 1939',
+  question_8: 'Գ․ Պերու',
+  question_9: 'Գ․ Անտարկտիկայի անապատը',
+  question_10: 'Ա․ 30 000',
+  question_11: 'Բ․ Իտալերեն',
+  question_12: 'Ա․ Վոլֆրամ',
+  question_13: 'Բ․ Ենթաստամոքսային գեղձը',
+  question_14: 'Բ․ Նեղոս',
+  question_15: 'Գ․Ալբերտ Այնշտայն',
+  question_extra: 'Գ. Մաշկը'
+
+};
